@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
+import { ClientRoutingModule } from './client-routing.module';
+
 @NgModule({
-  imports: [
-  ],
+  imports: [ClientRoutingModule],
   exports: [
   ]
 })
