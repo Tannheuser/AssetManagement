@@ -10,9 +10,9 @@ import { MaterialModule} from './modules/material.module';
 import { environment } from '../environments/environment';
 import { reducers } from './reducers/app.reducer';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 import { RootComponent } from './root.component';
 import { RoutingModule } from './modules/routing.module';
-import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 
 
 @NgModule({

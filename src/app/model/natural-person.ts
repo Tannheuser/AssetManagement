@@ -1,9 +1,15 @@
-export class NaturalPerson implements Contacts, BirthDetails {
+import { PostalAddress } from './postal-address';
+
+export class NaturalPerson implements Contacts, BirthDetails, PersonDetails {
+  nationality: string;
+  sex: string;
+  socialSecurityNumber: string;
   dateOfBirth: string;
   countryOfBirth: string;
   placeOfBirth: string;
   phone: string;
   email: string;
+  address: PostalAddress;
 
   constructor(
     public firstName: string,

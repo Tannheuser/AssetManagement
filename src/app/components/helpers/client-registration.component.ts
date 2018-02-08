@@ -1,9 +1,14 @@
 import { Router } from '@angular/router';
 
-export class ClientRegistrationComponent {
-  constructor(private router: Router) {}
+export class NavigationComponent {
+  constructor(private router: Router) {
+  }
+
+  cancelRegistration() {
+    this.router.navigate(['/']);
+  }
 
   registerClient() {
-    this.router.navigate(['clients']);
+    this.router.navigate(['clients', 'register']);
   }
 }
