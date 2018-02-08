@@ -1,0 +1,25 @@
+<div fxLayout="column">
+  <header>
+    <div class="heading">
+      <div class="title">
+        <p>
+          Time. Money.<br/>
+          You know the drill.<br/>
+        </p>
+        <div>
+          <button type="button" mat-raised-button color="primary" (click)="registerClient()">
+            Register as a new client
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <am-navbar></am-navbar>
+  <main fxLayout fxLayoutAlign="center center">
+    <div fxLayout fxLayoutAlign="center" fxFlex="1200px">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+

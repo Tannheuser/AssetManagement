@@ -8,25 +8,29 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule} from './modules/material.module';
 
 import { environment } from '../environments/environment';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { reducers } from './reducers/app.reducer';
+import { HomeComponent } from './components/home/home.component';
+import { RootComponent } from './root.component';
+import { RoutingModule } from './modules/routing.module';
+import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    RootComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
+    RoutingModule,
     StoreModule.forRoot(reducers),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
 export class AssetManagementModule { }

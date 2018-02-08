@@ -1,0 +1,29 @@
+.heading {
+  background: url('../assets/img/stock.jpg') no-repeat, repeat-x;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position-y: bottom;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+
+  .title {
+    position: absolute;
+    display: block;
+    overflow: visible;
+    top: 60px;
+    margin-left: 110px;
+
+    p {
+      text-transform: uppercase;
+      font-size: 24px;
+      color: #e5e5ff;
+      line-height: 38px;
+    }
+
+    button {
+      font-size: 14px;
+    };
+  }
+}
+
