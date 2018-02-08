@@ -4,10 +4,12 @@ import { ClientAction, ClientActionTypes } from '../actions/client.actions';
 
 export interface State {
   naturalPerson: NaturalPerson;
+  registrationId: string;
 }
 
 const initialState: State = {
-  naturalPerson: null
+  naturalPerson: null,
+  registrationId: null
 };
 
 export function clientReducer(state = initialState, action: ClientAction) {
@@ -25,9 +27,13 @@ export function clientReducer(state = initialState, action: ClientAction) {
     case ClientActionTypes.SaveIndividualComplete:
       return {
         ...state,
-        naturalPerson: action.payload
+        registrationId: action.payload._id
       };
     case ClientActionTypes.SaveIndividualFailed:
+      return {
+        ...state,
+        registrationId: null
+      };
     default:
       return state;
   }

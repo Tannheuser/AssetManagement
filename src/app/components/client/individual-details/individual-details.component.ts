@@ -13,7 +13,7 @@ import { NaturalPerson } from '../../../model/natural-person';
 })
 export class IndividualDetailsComponent extends NavigationComponent implements OnInit, OnDestroy {
   private personSubscription: Subscription;
-  person = new NaturalPerson('John', 'Doe', 'J.D.');
+  person: NaturalPerson;
 
   constructor(
     private clientService: ClientService,

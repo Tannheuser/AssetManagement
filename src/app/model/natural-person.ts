@@ -1,6 +1,7 @@
 import { PostalAddress } from './postal-address';
 
 export class NaturalPerson implements Contacts, BirthDetails, PersonDetails {
+  _id: string;
   nationality: string;
   sex: string;
   socialSecurityNumber: string;
