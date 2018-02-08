@@ -1,18 +1,18 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { MaterialModule} from './modules/material.module';
+import { RoutingModule } from './modules/routing.module';
+import { SharedModule } from './modules/shared.module';
 
 import { environment } from '../environments/environment';
 import { reducers } from './reducers/app.reducer';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 import { RootComponent } from './root.component';
-import { RoutingModule } from './modules/routing.module';
 
 
 @NgModule({
@@ -24,9 +24,9 @@ import { RoutingModule } from './modules/routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
-    MaterialModule,
+    EffectsModule.forRoot([]),
     RoutingModule,
+    SharedModule,
     StoreModule.forRoot(reducers),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
