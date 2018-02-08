@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-individual.component.scss']
 })
 export class RegisterIndividualComponent implements OnInit {
-
+  isLinear = false;
+  // firstFormGroup: FormGroup;
+  // secondFormGroup: FormGroup;
   constructor() { }
 
   ngOnInit() {
