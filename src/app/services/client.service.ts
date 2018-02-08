@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as fromClient from '../reducers/client.reducer';
-import { NaturalPerson } from '../model/natural-person';
 import { LoadIndividualAction, SaveIndividualAction } from '../actions/client.actions';
+import { NaturalPerson } from '../model/natural-person';
 
 @Injectable()
 export class ClientService {
