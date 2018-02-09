@@ -6,9 +6,7 @@
         <ng-template matStepLabel>Basic details</ng-template>
         <mat-form-field>
           <mat-select placeholder="Sex" name="sex" ngModel>
-            <mat-option value="M">Male</mat-option>
-            <mat-option value="F">Female</mat-option>
-            <mat-option value="NA">Not Applicable</mat-option>
+            <mat-option [value]="g.key" *ngFor="let g of genders">{{g.value}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -27,9 +25,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-select placeholder="Nationality" name="nationality" ngModel>
-            <mat-option value="France">France</mat-option>
-            <mat-option value="Germany">Germany</mat-option>
-            <mat-option value="Netherlands">Netherlands</mat-option>
+            <mat-option [value]="c.key" *ngFor="let c of countries">{{c.value}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -63,9 +59,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-select placeholder="Country" name="country" ngModel>
-            <mat-option value="France">France</mat-option>
-            <mat-option value="Germany">Germany</mat-option>
-            <mat-option value="Netherlands">Netherlands</mat-option>
+            <mat-option [value]="c.key" *ngFor="let c of countries">{{c.value}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>

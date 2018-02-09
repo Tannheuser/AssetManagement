@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndividualDetailsCardComponent } from './individual-details-card.component';
+import { SharedModule } from '../../../modules/shared.module';
+import { MaterialModule } from '../../../modules/material.module';
 
 describe('IndividualDetailsCardComponent', () => {
   let component: IndividualDetailsCardComponent;
@@ -8,6 +10,7 @@ describe('IndividualDetailsCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [SharedModule, MaterialModule],
       declarations: [ IndividualDetailsCardComponent ]
     })
     .compileComponents();
@@ -19,7 +22,7 @@ describe('IndividualDetailsCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('component should be created', () => {
     expect(component).toBeTruthy();
   });
 });

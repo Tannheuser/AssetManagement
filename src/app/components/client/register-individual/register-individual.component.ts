@@ -20,6 +20,15 @@ export class RegisterIndividualComponent extends NavigationComponent implements 
   @ViewChild('addressForm') addressDetails: NgForm;
   person: NaturalPerson;
   registrationId: string;
+  genders: ListItem[] = [
+    {key: 'M', value: 'Male'},
+    {key: 'F', value: 'Female'}
+  ];
+  countries: ListItem[] = [
+    {key: 'GE', value: 'Germany'},
+    {key: 'FR', value: 'France'},
+    {key: 'NDL', value: 'Netherlands'}
+  ];
 
   constructor(private clientService: ClientService, router: Router) {
     super(router);
@@ -54,10 +63,15 @@ export class RegisterIndividualComponent extends NavigationComponent implements 
   }
 
   fillPerson() {
-    this.person = {...this.basicDetails.value};
+    this.person = {...this.basicDetails.value} as NaturalPerson;
   }
 
   registerPerson() {
     this.clientService.saveIndividual(this.person);
   }
+}
+
+interface ListItem {
+  key: string;
+  value: string;
 }

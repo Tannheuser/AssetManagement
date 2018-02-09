@@ -19,7 +19,7 @@ describe('RegisterIndividualComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('component should be created', () => {
     expect(component).toBeTruthy();
   });
 });
