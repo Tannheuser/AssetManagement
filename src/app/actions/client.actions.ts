@@ -2,12 +2,17 @@ import { Action } from '@ngrx/store';
 import { NaturalPerson } from '../model/natural-person';
 
 export enum ClientActionTypes {
-  LoadIndividual = '[Client] LoadIndividual',
+  CleanIndividual = '[Client] Clean Individual',
+  LoadIndividual = '[Client] Load Individual',
   LoadIndividualComplete = '[Client] Load Individual Complete',
   LoadIndividualFailed = '[Client] Load Individual Failed',
   SaveIndividual = '[Client] Save Individual',
   SaveIndividualComplete = '[Client] Save Individual Complete',
   SaveIndividualFailed = '[Client] Save Individual Failed'
+}
+
+export class CleanIndividualAction implements Action {
+  readonly type = ClientActionTypes.CleanIndividual;
 }
 
 export class LoadIndividualAction implements Action {
@@ -39,6 +44,7 @@ export class SaveIndividualFailedAction implements Action {
 }
 
 export type ClientAction =
+  CleanIndividualAction |
   LoadIndividualAction |
   LoadIndividualCompleteAction |
   LoadIndividualFailedAction |

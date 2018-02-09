@@ -30,6 +30,7 @@ export function clientReducer(state = initialState, action: ClientAction) {
         registrationId: action.payload
       };
     case ClientActionTypes.SaveIndividualFailed:
+    case ClientActionTypes.CleanIndividual:
       return {
         ...state,
         registrationId: null

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { LoadIndividualAction, SaveIndividualAction } from '../actions/client.actions';
+import { CleanIndividualAction, LoadIndividualAction, SaveIndividualAction } from '../actions/client.actions';
 import { NaturalPerson } from '../model/natural-person';
 import { AppState } from '../reducers/app.reducer';
 
@@ -15,6 +15,10 @@ export class ClientService {
 
   get naturalPerson() {
     return this.store.select(s => s.client.naturalPerson);
+  }
+
+  cleanIndividual() {
+    this.store.dispatch(new CleanIndividualAction());
   }
 
   getIndividual(id: string) {

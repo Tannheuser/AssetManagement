@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ClientService } from '../../../services/client.service';
@@ -30,14 +30,19 @@ export class RegisterIndividualComponent extends NavigationComponent implements 
     {key: 'NDL', value: 'Netherlands'}
   ];
 
-  constructor(private clientService: ClientService, router: Router) {
-    super(router);
+  constructor(
+    private clientService: ClientService,
+    router: Router) {
+      super(router);
   }
 
   ngOnInit() {
     this.registrationSubscription = this.clientService.registrationId.subscribe(
       registrationId => {
-        if (registrationId) { this.registrationId = registrationId; }
+        if (registrationId) {
+          this.registrationId = registrationId;
+          this.clientService.cleanIndividual();
+        }
       }
     );
   }
