@@ -3,7 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ClientService } from '../../../services/client.service';
-import { NavigationComponent } from '../../helpers/navigation.component';
 import { NaturalPerson } from '../../../model/natural-person';
 
 @Component({
@@ -11,15 +10,13 @@ import { NaturalPerson } from '../../../model/natural-person';
   templateUrl: './individual-details.component.html',
   styleUrls: ['./individual-details.component.scss']
 })
-export class IndividualDetailsComponent extends NavigationComponent implements OnInit, OnDestroy {
+export class IndividualDetailsComponent implements OnInit, OnDestroy {
   private personSubscription: Subscription;
   person: NaturalPerson;
 
   constructor(
     private clientService: ClientService,
-    private route: ActivatedRoute,
-    router: Router) {
-      super(router);
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {

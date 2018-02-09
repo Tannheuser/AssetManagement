@@ -17,15 +17,7 @@ mat-toolbar {
     color: #999;
 
     &:hover {
-      &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        left: 25%;
-        right: 25%;
-        bottom: 0;
-        border: 2px solid black;
-      }
+      color: #000;
     }
   }
 }

@@ -11,4 +11,8 @@ export class NavigationComponent {
   registerClient() {
     this.router.navigate(['clients', 'register']);
   }
+
+  showDetails(id: string) {
+    this.router.navigate(['clients', id]);
+  }
 }

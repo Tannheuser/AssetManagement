@@ -1,3 +1,17 @@
 .individual-details {
   padding: 30px;
 }
+
+mat-card-title {
+  span {
+    font-size: 20px;
+  }
+}
+
+mat-card-content {
+  padding: 0 14px;
+  
+  span {
+    color: #777;
+  }
+}

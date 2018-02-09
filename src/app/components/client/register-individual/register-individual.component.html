@@ -1,6 +1,7 @@
 <section class="stepper" *ngIf="!registrationId">
   <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
     <mat-step>
+      <!--TODO: Move form to separate component-->
       <form fxLayout="column" fxLayoutAlign="center stretch" #detailsForm="ngForm">
         <ng-template matStepLabel>Basic details</ng-template>
         <mat-form-field>
@@ -32,16 +33,20 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Social Security Number" name="socialSecurityNumber" ngModel  required>
+          <input matInput placeholder="Social Security Number" name="socialSecurityNumber" ngModel required>
         </mat-form-field>
         <div fxLayout>
           <button mat-button (click)="cancelRegistration()">Cancel</button>
           <div fxFlex></div>
-          <button mat-button matStepperNext color="primary" [disabled]="detailsForm.invalid">Next</button>
+          <button mat-button matStepperNext color="primary"
+                  [disabled]="detailsForm.invalid"
+                  (click)="fillPerson()">Next <mat-icon>chevron_right</mat-icon>
+          </button>
         </div>
       </form>
     </mat-step>
     <mat-step>
+      <!--TODO: Move form to separate component-->
       <form fxLayout="column" fxLayoutAlign="center stretch" #addressForm="ngForm">
         <ng-template matStepLabel>Address details</ng-template>
         <mat-form-field>
@@ -72,10 +77,10 @@
         <div fxLayout>
           <button mat-button (click)="cancelRegistration()">Cancel</button>
           <div fxFlex></div>
-          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperPrevious><mat-icon>chevron_left</mat-icon> Back</button>
           <button mat-button matStepperNext color="primary"
                   [disabled]="addressForm.invalid"
-                  (click)="fillPerson()">Next
+                  (click)="fillAddress()">Next <mat-icon>chevron_right</mat-icon>
           </button>
         </div>
       </form>
@@ -86,13 +91,16 @@
       <div fxLayout>
         <button mat-button (click)="cancelRegistration()">Cancel</button>
         <div fxFlex></div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-raised-button matStepperPrevious color="primary" (click)="registerPerson()">Confirm</button>
+        <button mat-button matStepperPrevious><mat-icon>chevron_left</mat-icon> Back</button>
+        <button mat-raised-button color="primary" (click)="registerPerson()">Confirm</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
 </section>
 <section class="confirmation" *ngIf="registrationId">
-  {{registrationId}}
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Registration completed</h1>
+    <button mat-button color="primary" (click)="showDetails(registrationId)">View Details</button>
+  </div>
 </section>
 

@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ClientService } from '../../../services/client.service';
 import { NavigationComponent } from '../../helpers/navigation.component';
 import { NaturalPerson } from '../../../model/natural-person';
+import { PostalAddress } from '../../../model/postal-address';
 
 @Component({
   selector: 'am-register-individual',
@@ -16,6 +17,7 @@ export class RegisterIndividualComponent extends NavigationComponent implements 
   private registrationSubscription: Subscription;
 
   @ViewChild('detailsForm') basicDetails: NgForm;
+  @ViewChild('addressForm') addressDetails: NgForm;
   person: NaturalPerson;
   registrationId: string;
 
@@ -35,15 +37,24 @@ export class RegisterIndividualComponent extends NavigationComponent implements 
     this.registrationSubscription.unsubscribe();
   }
 
+  fillAddress() {
+    this.person = {
+      ...this.person,
+      email: this.addressDetails.value.email,
+      phone: this.addressDetails.value.phone,
+      address: {
+        ...new PostalAddress(),
+        line1: this.addressDetails.value.line1,
+        line2: this.addressDetails.value.line2,
+        postalCode: this.addressDetails.value.postalCode,
+        city: this.addressDetails.value.city,
+        country: this.addressDetails.value.country
+      }
+    };
+  }
+
   fillPerson() {
-    // this.person.firstName = this.basicDetails.value.firstName;
-    // this.person.lastName = this.basicDetails.value.lastName;
-    // this.person.sex = this.basicDetails.value.sex;
-    // this.person.initials = this.basicDetails.value.initials;
-    // this.person.dateOfBirth = this.basicDetails.value.birthday;
-    // this.person.dateOfBirth = this.basicDetails.value.birthday;
-    // this.person.dateOfBirth = this.basicDetails.value.birthday;
-    this.person = {...this.basicDetails.value} as NaturalPerson;
+    this.person = {...this.basicDetails.value};
   }
 
   registerPerson() {

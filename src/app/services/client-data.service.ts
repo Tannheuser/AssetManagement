@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+import 'rxjs/add/observable/throw';
 
 import { environment } from '../../environments/environment';
 import { IndividualRegistration } from '../model/individual-registration';
@@ -15,7 +15,7 @@ export class ClientDataService {
   constructor(private httpClient: HttpClient) {}
 
   fetchIndividual(id: string) {
-    const url = `${this.registrationAPI}\${id}`;
+    const url = `${this.registrationAPI}/${id}`;
     return this.httpClient.get<IndividualRegistration>(url)
       .map(response => response)
       .catch((error: Response) => Observable.throw(error));
