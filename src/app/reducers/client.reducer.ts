@@ -27,7 +27,7 @@ export function clientReducer(state = initialState, action: ClientAction) {
     case ClientActionTypes.SaveIndividualComplete:
       return {
         ...state,
-        registrationId: action.payload._id
+        registrationId: action.payload
       };
     case ClientActionTypes.SaveIndividualFailed:
       return {

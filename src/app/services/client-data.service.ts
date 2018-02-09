@@ -15,7 +15,7 @@ export class ClientDataService {
   constructor(private httpClient: HttpClient) {}
 
   fetchIndividual(id: string) {
-    const url = this.registrationAPI + id;
+    const url = `${this.registrationAPI}\${id}`;
     return this.httpClient.get<IndividualRegistration>(url)
       .map(response => response)
       .catch((error: Response) => Observable.throw(error));

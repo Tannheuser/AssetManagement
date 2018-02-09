@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ClientService } from '../../../services/client.service';
-import { NavigationComponent } from '../../helpers/client-registration.component';
+import { NavigationComponent } from '../../helpers/navigation.component';
 import { NaturalPerson } from '../../../model/natural-person';
 
 @Component({

@@ -4,6 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  registrationAPIUrl: 'https://private-dda55-blancodeveloperassignment.apiary-mock.com/dev/registrations/',
+  registrationAPIUrl: 'https://private-dda55-blancodeveloperassignment.apiary-mock.com/dev/registrations',
   production: false
 };

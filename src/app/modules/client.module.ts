@@ -12,12 +12,15 @@ import { ClientEffects } from '../effects/client.effects';
 import { IndividualDetailsComponent } from '../components/client/individual-details/individual-details.component';
 import { IndividualDetailsCardComponent } from '../components/client/individual-details-card/individual-details-card.component';
 import { RegisterIndividualComponent } from '../components/client/register-individual/register-individual.component';
+import { RegistrationConfirmationComponent } from '../components/client/registration-confirmation/registration-confirmation.component';
+
 
 @NgModule({
   declarations: [
     IndividualDetailsComponent,
     IndividualDetailsCardComponent,
-    RegisterIndividualComponent
+    RegisterIndividualComponent,
+    RegistrationConfirmationComponent
   ],
   imports: [
     ClientRoutingModule,

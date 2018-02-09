@@ -31,7 +31,7 @@ export class SaveIndividualAction implements Action {
 
 export class SaveIndividualCompleteAction implements Action {
   readonly type = ClientActionTypes.SaveIndividualComplete;
-  constructor(public payload: NaturalPerson) {}
+  constructor(public payload: string) {}
 }
 
 export class SaveIndividualFailedAction implements Action {

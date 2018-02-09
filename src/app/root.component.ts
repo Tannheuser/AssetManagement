@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { NavigationComponent } from './components/helpers/client-registration.component';
+import { NavigationComponent } from './components/helpers/navigation.component';
 
 @Component({
   selector: 'am-root',

@@ -15,7 +15,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 import { RootComponent } from './root.component';
 
-
 @NgModule({
   declarations: [
     RootComponent,

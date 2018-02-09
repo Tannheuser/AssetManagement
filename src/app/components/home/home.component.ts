@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { NavigationComponent } from '../helpers/client-registration.component';
+import { NavigationComponent } from '../helpers/navigation.component';
 
 @Component({
   selector: 'am-home',
